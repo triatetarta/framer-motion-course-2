@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Fade from './Fade';
 
-function App() {
+import './styles.css';
+
+const App = () => {
+  const [isToggled, setIsToggled] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header>
+        <h1 className='fake-logo'>Level Up</h1>
       </header>
+      <main className='layout'>
+        <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
+        <Fade>
+          {isToggled && (
+            <div className='card'>
+              <h4>Post Number one</h4>
+              <p>this is inside the card</p>
+            </div>
+          )}
+        </Fade>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
