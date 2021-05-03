@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Fade from './Fade';
 import Gallery from './Gallery';
+import Loading from './Loading';
+import ScaleCorrection from './ScaleCorrection';
 import Slide from './Slide';
 
 import './styles.css';
@@ -11,6 +13,9 @@ const App = () => {
 
   return (
     <div className='App'>
+      <header>
+        <h1 className='fake-logo'>level up</h1>
+      </header>
       <Switch>
         <Route exact path='/'>
           <main className='layout'>
@@ -38,6 +43,14 @@ const App = () => {
 
         <Route path='/gallery'>
           <Gallery />
+        </Route>
+
+        <Route path='/scale'>
+          <ScaleCorrection />
+        </Route>
+
+        <Route path='/loading'>
+          <Loading />
         </Route>
       </Switch>
     </div>
