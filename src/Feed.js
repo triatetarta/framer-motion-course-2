@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Drawer from './Drawer';
 
 const posts = [0, 1, 2, 3, 4, 5, 6, 7, 8];

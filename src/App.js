@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import DragAndDrop from './DragAndDrop/DragAndDrop';
 import Fade from './Fade';
 import Feed from './Feed';
 import Gallery from './Gallery';
@@ -57,6 +58,10 @@ const App = () => {
 
       <Route path='/feed'>
         <Feed />
+      </Route>
+
+      <Route path='/dragdrop'>
+        <DragAndDrop />
       </Route>
     </div>
   );
