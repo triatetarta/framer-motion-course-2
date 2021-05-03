@@ -5,6 +5,7 @@ import Fade from './Fade';
 import Feed from './Feed';
 import Gallery from './Gallery';
 import Loading from './Loading';
+import LoginWindow from './LoginWindow';
 import ScaleCorrection from './ScaleCorrection';
 import Slide from './Slide';
 
@@ -62,6 +63,10 @@ const App = () => {
 
       <Route path='/dragdrop'>
         <DragAndDrop />
+      </Route>
+
+      <Route path='/login'>
+        <LoginWindow />
       </Route>
     </div>
   );

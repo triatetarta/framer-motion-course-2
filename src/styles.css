@@ -394,7 +394,7 @@ tbody tr:last-child {
   left: 0;
   bottom: 0;
 }
-.modal {
+/* .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -403,7 +403,7 @@ tbody tr:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .loading {
   position: fixed;
@@ -417,4 +417,24 @@ tbody tr:last-child {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 2rem);
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  pointer-events: none;
+}
+
+.modal .card {
+  pointer-events: all;
+  flex: 1;
+  max-width: 500px;
+  align-self: flex-start;
 }
