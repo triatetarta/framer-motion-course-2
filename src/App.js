@@ -11,6 +11,7 @@ import Slide from './Slide';
 import { AnimatedRoutes, RouteTransition } from './AnimatedRoutes';
 
 import './styles.css';
+import Countdown from './Countdown';
 
 const App = () => {
   const [isToggled, setIsToggled] = useState(false);
@@ -66,6 +67,10 @@ const App = () => {
 
       <RouteTransition path='/login'>
         <LoginWindow />
+      </RouteTransition>
+
+      <RouteTransition path='/countdown'>
+        <Countdown />
       </RouteTransition>
     </div>
   );

@@ -395,7 +395,7 @@ tbody tr:last-child {
   left: 0;
   bottom: 0;
 }
-/* .modal {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -404,7 +404,7 @@ tbody tr:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+}
 
 .loading {
   position: fixed;
@@ -419,7 +419,7 @@ tbody tr:last-child {
   justify-content: center;
   flex-direction: column;
 }
-
+/* 
 .modal {
   position: fixed;
   width: 100%;
@@ -431,11 +431,27 @@ tbody tr:last-child {
   justify-content: center;
   flex-grow: 1;
   pointer-events: none;
-}
+} */
 
-.modal .card {
+/* .modal .card {
   pointer-events: all;
   flex: 1;
   max-width: 500px;
   align-self: flex-start;
+} */
+
+.countdown {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #111;
+  color: #fff;
+}
+
+.countdown .h2 {
+  font-size: 6rem;
+  margin: 0;
 }
