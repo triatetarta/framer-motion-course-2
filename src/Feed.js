@@ -8,9 +8,7 @@ const Feed = () => {
 
   return (
     <div className='App'>
-      <header>
-        <h1 className='fake-logo'>Level Up</h1>
-      </header>
+    
 
       <div className='layout'>
         <h3>Blog Posts</h3>

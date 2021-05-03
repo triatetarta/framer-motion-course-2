@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
 import DragAndDrop from './DragAndDrop/DragAndDrop';
 import Fade from './Fade';
 import Feed from './Feed';
 import Gallery from './Gallery';
 import Loading from './Loading';
 import LoginWindow from './LoginWindow';
+import Nav from './Nav';
 import ScaleCorrection from './ScaleCorrection';
 import Slide from './Slide';
+import { AnimatedRoutes, RouteTransition } from './AnimatedRoutes';
 
 import './styles.css';
 
@@ -16,11 +17,9 @@ const App = () => {
 
   return (
     <div className='App'>
-      <header>
-        <h1 className='fake-logo'>level up</h1>
-      </header>
-      <Switch>
-        <Route exact path='/'>
+      <Nav />
+      <AnimatedRoutes>
+        <RouteTransition exact path='/'>
           <main className='layout'>
             <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
             <Fade isActive={isToggled}>
@@ -42,32 +41,32 @@ const App = () => {
               </div>
             </Slide>
           </main>
-        </Route>
+        </RouteTransition>
 
-        <Route path='/gallery'>
+        <RouteTransition path='/gallery'>
           <Gallery />
-        </Route>
+        </RouteTransition>
 
-        <Route path='/scale'>
+        <RouteTransition path='/scale'>
           <ScaleCorrection />
-        </Route>
+        </RouteTransition>
 
-        <Route path='/loading'>
+        <RouteTransition path='/loading'>
           <Loading />
-        </Route>
-      </Switch>
+        </RouteTransition>
+      </AnimatedRoutes>
 
-      <Route path='/feed'>
+      <RouteTransition path='/feed'>
         <Feed />
-      </Route>
+      </RouteTransition>
 
-      <Route path='/dragdrop'>
+      <RouteTransition path='/dragdrop'>
         <DragAndDrop />
-      </Route>
+      </RouteTransition>
 
-      <Route path='/login'>
+      <RouteTransition path='/login'>
         <LoginWindow />
-      </Route>
+      </RouteTransition>
     </div>
   );
 };
