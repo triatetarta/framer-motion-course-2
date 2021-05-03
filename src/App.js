@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Fade from './Fade';
+import Feed from './Feed';
 import Gallery from './Gallery';
 import Loading from './Loading';
 import ScaleCorrection from './ScaleCorrection';
@@ -53,6 +54,10 @@ const App = () => {
           <Loading />
         </Route>
       </Switch>
+
+      <Route path='/feed'>
+        <Feed />
+      </Route>
     </div>
   );
 };
