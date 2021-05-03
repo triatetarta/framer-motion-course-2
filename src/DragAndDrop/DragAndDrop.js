@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import { usePositionReorder } from './usePositionReorder';
 import { useMeasurePosition } from './useMeasurePosition';
 
@@ -36,27 +36,35 @@ function DragItem({ post, updatePosition, i, updateOrder }) {
     updatePosition(i, pos);
   });
 
+  const y = useMotionValue(0);
+
   return (
-    <motion.div
-      ref={ref}
-      drag='y'
-      layout
-      dragConstraints={{ top: 0, bottom: 0 }}
-      dragElastic={1}
-      className='card'
-      key={post}
-      animate={{ scale: isDragging ? 1.05 : 1 }}
-      onDragStart={() => setIsDragging(true)}
-      onDragEnd={() => setIsDragging(false)}
-      onViewportBoxUpdate={(_, delta) => {
-        if (isDragging) {
-          updateOrder(i, delta.y.translate);
-        }
-      }}
-    >
-      <h4>List Item {post}</h4>
-      <p>this is inside the card</p>
-    </motion.div>
+    <div>
+      <motion.div
+        ref={ref}
+        drag='y'
+        layout
+        dragConstraints={{ top: 0, bottom: 0 }}
+        dragElastic={1}
+        key={post}
+        animate={{ scale: isDragging ? 1.05 : 1 }}
+        onDragStart={() => setIsDragging(true)}
+        onDragEnd={() => setIsDragging(false)}
+        onViewportBoxUpdate={(_, delta) => {
+          if (isDragging) {
+            updateOrder(i, delta.y.translate);
+          }
+
+          y.set(delta.y.translate);
+        }}
+      >
+        Drag Handle
+      </motion.div>
+      <motion.div style={{ y }} className='card'>
+        <h4>List Item {post}</h4>
+        <p>this is inside the card</p>
+      </motion.div>
+    </div>
   );
 }
 
